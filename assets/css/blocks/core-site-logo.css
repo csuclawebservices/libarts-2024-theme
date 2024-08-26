@@ -1,0 +1,57 @@
+.csu-signature-link {
+	margin: 0;
+	margin-left: 22px;
+	padding: 22px 0;
+	display: block;
+	width: 146px;
+	max-height: 100px;
+	overflow: hidden;
+}
+
+.csu-signature {
+	min-width: 450px;
+	max-width: 450px;
+	height: auto;
+	max-height: 57px;
+}
+
+.csu-signature-medium,
+.csu-signature-large {
+	display: none;
+}
+
+.csu-signature-mobile,
+.csu-signature-medium,
+.csu-signature-large {
+	fill: var(--cla--color--csu-green);
+	transition: fill 300ms;
+}
+
+
+
+
+@media (min-width: 768px) {
+	.csu-signature-link {
+		width: 222px;
+	}
+	.csu-signature-mobile {
+		display: none;
+	}
+	.csu-signature-medium {
+		display: block;
+	}
+}
+
+
+
+@media (min-width: 1200px) {
+	.csu-signature-link {
+		width: 450px;
+	}
+	.csu-signature-medium {
+		display: none;
+	}
+	.csu-signature-large {
+		display: block;
+	}
+}

@@ -1,0 +1,48 @@
+/* Style: highlight-headline */
+p.is-style-highlight-headline {
+	padding: var(--cla--font-size--90);
+	display: inline-block;
+	font-size: var(--cla--font-size--200);
+	font-weight: 600;
+	line-height: 1;
+}
+p.is-style-highlight-headline > em {
+	font-family: var(--cla--font-family--serif);
+	font-size: 1.1em;
+	font-weight: 400;
+}
+
+/* Style: emphasis-headline-small */
+p.is-style-emphasis-headline-large,
+p.is-style-emphasis-headline-small,
+.editor-styles-wrapper .is-layout-constrained > p.is-style-emphasis-headline-large,
+.editor-styles-wrapper .is-layout-constrained > p.is-style-emphasis-headline-small {
+	margin-block-start: var(--cla--font-size--90);
+	margin-block-end: var(--cla--font-size--90);
+	font-weight: 500;
+	text-transform: uppercase;
+	line-height: 1;
+}
+p.is-style-emphasis-headline-large > em,
+p.is-style-emphasis-headline-small > em {
+	font-family: var(--cla--font-family--serif);
+	font-weight: 500;
+}
+p.is-style-emphasis-headline-small {
+	font-size: var(--cla--font-size--200);
+	letter-spacing: 5px;
+}
+p.is-style-emphasis-headline-small > em {
+	font-family: var(--cla--font-family--serif);
+	text-transform: capitalize;
+}
+p.is-style-emphasis-headline-large,
+.editor-styles-wrapper .is-layout-constrained > p.is-style-emphasis-headline-large {
+	font-size: var(--cla--font-size--400);
+	letter-spacing: 8px;
+	line-height: 0.75;
+}
+p.is-style-emphasis-headline-large > em {
+	font-family: var(--cla--font-family--serif);
+	font-weight: 400;
+}

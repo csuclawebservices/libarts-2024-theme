@@ -1,0 +1,14 @@
+{
+	"name": "libarts-2024-theme",
+	"version": "0.1.0",
+	"scripts": {
+		"build": "wp-scripts build --webpack-src-dir=src/blocks --output-path=blocks",
+		"start": "wp-scripts start --webpack-src-dir=src/blocks --output-path=blocks"
+	},
+	"devDependencies": {
+		"@wordpress/babel-preset-default": "^8.2.0",
+		"@wordpress/dependency-extraction-webpack-plugin": "^6.2.0",
+		"@wordpress/icons": "^10.2.0",
+		"@wordpress/scripts": "^28.2.0"
+	}
+}

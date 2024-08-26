@@ -1,0 +1,28 @@
+:where(.cla-blocks-sequence-item-container) {
+	--wp--preset--color--base: var(--cla--color--black);
+	color: var(--wp--preset--color--base);
+}
+.cla-blocks-sequence-item__title {
+	position: relative;
+	margin-bottom: 0;
+	border-bottom: var(--cla--linework--width) var(--cla--linework--style--solid) var(--cla--color--black);
+	padding: 0 var(--cla--spacing--1) var(--cla--spacing--1-2) var(--cla--spacing--1);
+}
+:where(.cla-blocks-sequence-item-container:not(.has-text-color) .cla-blocks-sequence-item) :is(h1, h2, h3, h4, h5, h6) {
+	color: var(--cla--color--primary);
+}
+.cla-blocks-sequence-item__title::after {
+	content: "";
+	position: absolute;
+	top: calc(100% - (var(--cla--point--size) * 0.5));
+	left: calc((var(--cla--point--size) * -0.5) - var(--cla--linework--width));
+	display: block;
+	height: var(--cla--point--size);
+	width: var(--cla--point--size);
+	background: radial-gradient(var(--cla--color--secondary) var(--cla--point--radial-gradient--atts)) var(--cla--point--background--atts);
+	transform-origin: top left;
+	pointer-events: none;
+}
+.cla-blocks-sequence-item__content {
+	padding: var(--cla--spacing--1-2) var(--cla--spacing--1) var(--cla--spacing--1) var(--cla--spacing--1);
+}

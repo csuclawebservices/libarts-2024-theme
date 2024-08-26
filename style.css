@@ -1,0 +1,397 @@
+/*
+Theme Name: Libarts 2024 Theme
+Theme URI: https://www.libarts.colostate.edu
+Template: infinitum
+Author: CLA Web Team
+Author URI: https://it.libarts.colostate.edu/web/
+Description: The theme for all College of Liberal Arts websites.
+Tags: 
+Version: 0.0.0libarts-2024-theme
+Requires at least: 6.5
+Tested up to: 6.5
+Requires PHP: 8.1
+License: GNU General Public License v2 or Later
+License URI: http://www.gnu.org/license/gpl-2.0.html
+Text Domain: cla
+*/
+
+body,
+.editor-styles-wrapper {
+	/* --------------------------------
+	 * Brand: Colors
+	 * -------------------------------- */
+
+	/* Primary Colors */
+	--cla--color--csu-green: var(--wp--preset--color--csu-green);
+	--cla--color--csu-gold: var(--wp--preset--color--csu-gold);
+	--cla--color--aggie-orange: var(--wp--preset--color--aggie-orange);
+
+	/* Find Your Energy Colors */
+	--cla--color--oval-green: var(--wp--preset--color--oval-green); 
+	--cla--color--lovers-lane: var(--wp--preset--color--lovers-lane);
+	--cla--color--energy-green: var(--wp--preset--color--energy-green);
+	--cla--color--flower-trial-red: var(--wp--preset--color--flower-trial-red);
+	--cla--color--powered-purple: var(--wp--preset--color--powered-purple);
+	--cla--color--horsetooth-blue: var(--wp--preset--color--horsetooth-blue);
+	--cla--color--stalwart-slate: var(--wp--preset--color--stalwart-slate);
+	--cla--color--sunshine: var(--wp--preset--color--sunshine);
+
+	/* Neutral Colors */
+	--cla--color--black: var(--wp--preset--color--black);
+	--cla--color--white: var(--wp--preset--color--white);
+	--cla--color--80-percent-black: var(--wp--preset--color--80-percent-black);
+	--cla--color--gray: var(--wp--preset--color--gray);
+	--cla--color--tan: var(--wp--preset--color--tan);
+
+	/* CLA Blocks Override Colors */
+	--cla-blocks--color--h1: var(--cla--color--black);
+	
+	/* Parent Theme Override Colors */
+	--wp--preset--color--base: var(--wp--preset--color--csu-green);
+	--wp--preset--color--primary: var(--wp--preset--color--csu-green);
+	--wp--preset--color--accent: var(--wp--preset--color--energy-green);
+
+	/* Theme Colors */
+	--cla--color--primary: var(--cla--color--csu-green);
+	--cla--color--primary--contrast: var(--cla--color--white);
+	--cla--color--secondary: var(--cla--color--oval-green);
+	--cla--color--secondary--contrast: var(--cla--color--white);
+	--cla--color--accent: var(--cla--color--energy-green);
+	--cla--color--accent--contrast: var(--cla--color--energy-green);
+	--cla--color--cta: var(--cla--color--flower-trial-red);
+	--cla--color--cta--contrast: var(--cla--color--white);
+
+	/* Linework */
+	--cla--color--linework: var(--cla--color--lovers-lane);
+
+	/* Points */
+	--cla--color--point: var(--cla--color--oval-green);
+
+
+
+	/* --------------------------------
+	 * Brand: Gradients
+	 * -------------------------------- */
+	
+	/* Color Bars */
+	--cla--gradient--color-bars--direction: 180deg;
+	--cla--gradient--color-bars--colors:
+		var(--cla--color--oval-green),
+		var(--cla--color--oval-green) 10%,
+		var(--cla--color--csu-green) 10%,
+		var(--cla--color--csu-green) 20%,
+		var(--cla--color--energy-green) 20%,
+		var(--cla--color--energy-green) 30%,
+		var(--cla--color--csu-gold) 30%,
+		var(--cla--color--csu-gold) 40%,
+		var(--cla--color--white) 40%,
+		var(--cla--color--white) 50%,
+		var(--cla--color--lovers-lane) 50%,
+		var(--cla--color--lovers-lane) 60%,
+		var(--cla--color--energy-green) 60%,
+		var(--cla--color--energy-green) 70%,
+		var(--cla--color--csu-green) 70%,
+		var(--cla--color--csu-green) 80%,
+		var(--cla--color--csu-gold) 80%,
+		var(--cla--color--csu-gold) 90%,
+		var(--cla--color--energy-green) 90%,
+		var(--cla--color--energy-green) 100%;
+	--cla--gradient--color-bars: linear-gradient(var(--cla--gradient--color-bars--direction), var(--cla--gradient--color-bars--colors), var(--cla--color--secondary));
+
+
+
+	/* --------------------------------
+	 * Brand: Textures
+	 * -------------------------------- */
+	
+	/* Brushstroke */
+
+
+	/* Photocopy */
+	--cla--texture--photocopy--url: assets/images/brushstroke-texture.jpg;
+	--cla--texture--photocopy-fragment--url: assets/images/brushstroke-texture-fragment.jpg;
+
+
+
+	/* --------------------------------
+	 * Brand: Typography
+	 * -------------------------------- */
+	
+	/* Font Family */
+	--cla--font-family--serif: var(--wp--preset--font-family--serif-1);
+	--cla--font-family--sans: var(--wp--preset--font-family--sans-serif-1);
+
+	--cla--font-family--subtitle: var(--cla--font-family--serif);
+
+	/* Font Size */
+	--cla--font-size--80: var(--wp--preset--font-size--80);
+	--cla--font-size--90: var(--wp--preset--font-size--90);
+	--cla--font-size--100: var(--wp--preset--font-size--100);
+	--cla--font-size--200: var(--wp--preset--font-size--200);
+	--cla--font-size--300: var(--wp--preset--font-size--300);
+	--cla--font-size--400: var(--wp--preset--font-size--400);
+	--cla--font-size--500: var(--wp--preset--font-size--500);
+	--cla--font-size--600: var(--wp--preset--font-size--600);
+	--cla--font-size--700: var(--wp--preset--font-size--700);
+	--cla--font-size--800: var(--wp--preset--font-size--800);
+	--cla--font-size--900: var(--wp--preset--font-size--900);
+	--cla--font-size--1000: var(--wp--preset--font-size-1000);
+
+	--cla--font-size--subtitle: calc(var(--cla--font-size--500) / 3);
+
+	/* Font Style */
+
+	/* Font Weight */
+	--cla--font-weight--subtitle: 400;
+	
+	/* Line Height */
+	--cla--line-height: var(--wp--custom--infinitum--typography--line-height);
+	--cla--line-height--heading: var(--wp--custom--infinitum--typography--heading-line-height);
+
+
+
+	/* --------------------------------
+	 * Brand: Layout
+	 * -------------------------------- */
+	
+	/* Spacing */
+	--cla--spacing--1-8: var(--wp--preset--spacing--1-8);
+	--cla--spacing--1-4: var(--wp--preset--spacing--1-4);
+	--cla--spacing--1-2: var(--wp--preset--spacing--1-2);
+	--cla--spacing--3-4: var(--wp--preset--spacing--3-4);
+	--cla--spacing--1: var(--wp--preset--spacing--1);
+	--cla--spacing--2: var(--wp--preset--spacing--2);
+	--cla--spacing--3: var(--wp--preset--spacing--3);
+	--cla--spacing--4: var(--wp--preset--spacing--4);
+	--cla--spacing--5: var(--wp--preset--spacing--5);
+	--cla--spacing--6: var(--wp--preset--spacing--6);
+	--cla--spacing--7: var(--wp--preset--spacing--7);
+	--cla--spacing--8: var(--wp--preset--spacing--8);
+	--cla--spacing--9: var(--wp--preset--spacing--9);
+	--cla--spacing--10: var(--wp--preset--spacing--10);
+
+	--cla--spacing--decoration: var(--cla--spacing--4);
+	--cla--spacing--decoration-small: var(--cla--spacing--2);
+
+	/* Linework */
+	--cla--linework--style: solid;
+	--cla--linework--style--solid: solid;
+	--cla--linework--style--dotted: dotted;
+	--cla--linework--width: 1px;
+
+	/* Points */
+	--cla--point--size: calc(var(--cla--spacing--1) * (3/5));
+	--cla--point--background--atts: center/calc(var(--cla--point--size) * 2) calc(var(--cla--point--size) * 2) repeat;
+	--cla--point--radial-gradient: radial-gradient(var(--cla--color--secondary) calc((var(--cla--point--size) - 2px) / 2), transparent calc(var(--cla--point--size) / 2)) center/calc(var(--cla--point--size) * 2) calc(var(--cla--point--size) * 2) repeat;
+	--cla--point--radial-gradient--atts: calc((var(--cla--point--size) - 2px) / 2), transparent calc(var(--cla--point--size) / 2);
+
+	/* Dimensions */
+	--cla--dimension--content-width: var(--wp--custom--infinitum--content-width, 1200);
+	--cla--dimension--content-width-px: calc(var(--cla--dimension--content-width) * 1px);
+	--cla--dimension--header--height: 0px;
+	--cla--dimension--wp--admin-bar: 0px;
+	--cla--dimension--wp--editor-top-toolbar: 0px;
+	--cla--dimension--wp--editor-footer: 0px;
+	--cla--dimension--decoration: var(--cla--spacing--decoration);
+	--cla--dimension--decoration-small: var(--cla--spacing--decoration-small);
+
+	/* Viewport */
+	--cla--viewport--offset--top: calc(var(--cla--dimension--wp--editor-top-toolbar) + var(--cla--dimension--wp--admin-bar) + var(--cla--dimension--header--height));
+	--cla--viewport--offset--right: 0px;
+	--cla--viewport--offset--bottom: var(--cla--dimension--wp--editor-footer);
+	--cla--viewport--offset--left: 0px;
+	--cla--viewport--height: calc(100vh - (var(--cla--viewport--offset--top) - var(--cla--viewport--offset--bottom)));
+	--cla--viewport--width: calc(100vw - (var(--cla--viewport--offset--left) - var(--cla--viewport--offset--right)));
+}
+
+body.admin-bar {
+	/* Dimensions */
+	--cla--dimension--wp--admin-bar: 32px;
+}
+body.wp-admin.block-editor-page .editor-styles-wrapper {
+	/* Dimensions */
+	--cla--dimension--wp--editor-top-toolbar: 60px;
+	--cla--dimension--wp--editor-footer: 24px;
+}
+body:has(header.wp-block-template-part) {
+	/* Dimensions */
+	--cla--dimension--header--height: 100px;
+}
+
+
+
+/* --------------------------------
+ * Site Header
+ * -------------------------------- */
+
+header.wp-block-template-part {
+	min-height: var(--cla--dimension--header--height);
+}
+.site-header-container {
+
+}
+.site-header-navigation-container {
+	min-height: 100px;
+	background-color: var(--cla--color--csu-green);
+}
+
+
+
+/* --------------------------------
+ * Brand: Color Bars
+ * -------------------------------- */
+ .cla-color-bars:where(.cla-color-bars--horizontal) {
+	--cla--gradient--color-bars--direction: 180deg;
+}
+.cla-color-bars:where(.cla-color-bars--vertical) {
+	--cla--gradient--color-bars--direction: 90deg;
+	--cla--gradient--color-bars: linear-gradient(var(--cla--gradient--color-bars--direction), var(--cla--gradient--color-bars--colors), var(--cla--color--secondary));
+}
+.cla-color-bars {
+	background: var(--cla--gradient--color-bars);
+}
+
+
+
+/* --------------------------------
+ * Brand: Duotone
+ * -------------------------------- */
+.wp-duotone-duotone,
+.editor-styles-wrapper [class*="wp-duotone-"] {
+	background-color: var(--cla--color--white);
+}
+.wp-duotone-duotone.wp-block-image img,
+.editor-styles-wrapper [class*="wp-duotone-"].wp-block-image img {
+	mix-blend-mode: hard-light;
+}
+
+
+
+/* --------------------------------
+ * Brand: Halftone
+ * -------------------------------- */
+.is-style-halftone {
+	--halftone-size: 4px;
+	--halftone-bleed: 0.275;
+	--halftone-separate-k: 0;
+	--halftone-dot-size: calc(var(--halftone-size) * var(--halftone-bleed));
+  	--halftone-color-dot-size: var(--halftone-dot-size);
+	filter: brightness( calc( 1.5 + var(--halftone-bleed) * 0.3 - var(--halftone-separate-k) * 0.02 ) ) blur(calc(var(--halftone-size) * 0.1)) contrast(1) blur(0.5px);
+	overflow:hidden;
+}
+.is-style-halftone::before,
+.is-style-halftone::after {
+    content: "";
+    position: absolute;
+	z-index: 1;
+    inset: -30%;
+    background-size: var(--halftone-size) var(--halftone-size);
+    background-blend-mode: multiply;
+    mix-blend-mode: multiply;
+}
+.is-style-halftone::before {
+    transform: rotate(30deg) scale(150%);
+    background-image: radial-gradient(var(--halftone-dot-size) at 25% 75%, #000, #666, #fff), radial-gradient(var(--halftone-color-dot-size) at 75% 25%, #000, #666, #fff), radial-gradient(var(--halftone-color-dot-size) at 25% 25%, #ff0, #ff6, #fff), radial-gradient(var(--halftone-color-dot-size) at 75% 75%, #ff0, #ff6, #fff);
+
+}
+.is-style-halftone::after {
+    transform: rotate(calc(-21deg + var(--halftone-rotation))) translateX(calc(var(--halftone-size) * 0.58));
+    background-image: radial-gradient(var(--halftone-color-dot-size) at 75% 25%, #f0f, #f6f, #fff), radial-gradient( var(--halftone-color-dot-size) at 25% 75%, #f0f, #f6f, #fff), radial-gradient(var(--halftone-color-dot-size) at 75% 75%, #0ff, #6ff, #fff), radial-gradient(var(--halftone-color-dot-size) at 25% 25%, #0ff, #6ff, #fff);
+}
+
+
+
+
+/* --------------------------------
+ * Block Styles
+ * -------------------------------- */
+
+/* Style: horsetooth-blue */
+.is-style-horsetooth-blue {
+	--cla--color--secondary: var(--cla--color--horsetooth-blue);
+	--cla--color--secondary--contrast: var(--cla--color--white);
+}
+
+/* Style: lovers-lane */
+.is-style-lovers-lane {
+	--cla--color--secondary: var(--cla--color--lovers-lane);
+	--cla--color--secondary--contrast: var(--cla--color--csu-green);
+}
+
+/* Style: powered-purple */
+.is-style-powered-purple {
+	--cla--color--secondary: var(--cla--color--powered-purple);
+	--cla--color--secondary--contrast: var(--cla--color--white);
+}
+
+
+
+/* --------------------------------
+ * Media Queries
+ * -------------------------------- */
+ @media (max-width: 479px) {
+	[class*="wp-block-"] {
+		--cla--spacing--decoration: var(--cla--spacing--1);
+		--cla--spacing--decoration-small: var(--cla--spacing--1);
+		--cla--dimension--decoration: var(--cla--spacing--1);
+		--cla--dimension--decoration-small: var(--cla--spacing--1);
+	}
+}
+
+
+
+@media (min-width: 480px) and (max-width: 767px) {
+	[class*="wp-block-"] {
+		--cla--spacing--decoration: var(--cla--spacing--2);
+		--cla--spacing--decoration-small: var(--cla--spacing--1);
+		--cla--dimension--decoration: var(--cla--spacing--2);
+		--cla--dimension--decoration-small: var(--cla--spacing--1);
+	}
+}
+
+
+
+@media (min-width: 768px) and (max-width: 1023px) {
+	[class*="wp-block-"] {
+		--cla--spacing--decoration: var(--cla--spacing--2);
+		--cla--spacing--decoration-small: var(--cla--spacing--2);
+		--cla--dimension--decoration: var(--cla--spacing--2);
+		--cla--dimension--decoration-small: var(--cla--spacing--2);
+	}
+}
+
+
+
+/* --------------------------------
+ * Container Queries
+ * -------------------------------- */
+@container (max-width: 479px) {
+	[class*="wp-block-"] > * {
+		--cla--spacing--decoration: var(--cla--spacing--1);
+		--cla--spacing--decoration-small: var(--cla--spacing--1);
+		--cla--dimension--decoration: var(--cla--spacing--1);
+		--cla--dimension--decoration-small: var(--cla--spacing--1);
+	}
+}
+
+
+
+@container (min-width: 480px) and (max-width: 767px) {
+	[class*="wp-block-"] > * {
+		--cla--spacing--decoration: var(--cla--spacing--2);
+		--cla--spacing--decoration-small: var(--cla--spacing--1);
+		--cla--dimension--decoration: var(--cla--spacing--2);
+		--cla--dimension--decoration-small: var(--cla--spacing--1);
+	}
+}
+
+
+
+@container (min-width: 768px) and (max-width: 1023px) {
+	[class*="wp-block-"] > * {
+		--cla--spacing--decoration: var(--cla--spacing--2);
+		--cla--spacing--decoration-small: var(--cla--spacing--2);
+		--cla--dimension--decoration: var(--cla--spacing--2);
+		--cla--dimension--decoration-small: var(--cla--spacing--2);
+	}
+}

@@ -1,0 +1,6 @@
+.wp-block-spacer.is-style-responsive-large {
+	height: var(--cla--dimension--decoration) !important;
+}
+.wp-block-spacer.is-style-responsive-small {
+	height: var(--cla--dimension--decoration-small) !important;
+}

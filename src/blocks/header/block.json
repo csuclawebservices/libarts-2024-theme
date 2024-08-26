@@ -1,0 +1,69 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "cla/header",
+	"version": "0.0.1",
+	"title": "Header",
+	"category": "theme",
+	"icon": "layout",
+	"description": "A page or post header",
+	"supports": {
+		"align": ["wide", "full"],
+		"color": {
+			"background": false,
+			"button": false,
+			"enableContrastChecker": false,
+			"gradients": false,
+			"heading": false,
+			"link": false,
+			"text": false
+		},
+		"customClassName": true,
+		"dimensions": {
+			"aspectRatio": false,
+			"minHeight": false
+		},
+		"html": false,
+		"interactivity": false,
+		"spacing": {
+			"margin": false,
+			"padding": false
+		},
+		"typography": {
+			"fontSize": false,
+			"lineHeight": false,
+			"textAlign": false
+		}
+	},
+	"textdomain": "cla",
+	"editorScript": "file:./block.js",
+	"viewScriptModule": "",
+	"style": "file:./block.css",
+	"editorStyle": "flie:./editor.css",
+	"allowedBlocks": [
+		"core/image",
+		"core/video"
+	],
+	"attributes": {
+		"layout": {
+			"type": "string",
+			"default": "primary"
+		},
+		"title": {
+			"type": "string",
+			"selector": ".cla-header__title",
+			"default": ""
+		},
+		"subtitle": {
+			"type": "string",
+			"selector": ".cla-header__subtitle",
+			"default": ""
+		}, 
+		"description": {
+			"type": "string",
+			"selector": ".cla-header__description",
+			"default": ""
+		}
+	},
+	"render": "file:/block.php"
+}
