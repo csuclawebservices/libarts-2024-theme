@@ -327,6 +327,25 @@ header.wp-block-template-part {
 
 
 /* --------------------------------
+ * MU Styles
+ * -------------------------------- */
+.cla-global-link {
+	display: block;
+}
+
+
+
+/* --------------------------------
+ * Footer
+ * -------------------------------- */
+.site-footer a:focus,
+.site-footer a:hover {
+	color: var(--cla--color--energy-green);
+}
+
+
+
+/* --------------------------------
  * Media Queries
  * -------------------------------- */
  @media (max-width: 479px) {
