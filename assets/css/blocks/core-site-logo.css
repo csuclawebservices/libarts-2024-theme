@@ -1,18 +1,11 @@
-.csu-signature-link {
-	margin: 0;
-	margin-left: 22px;
-	padding: 22px 0;
+.wp-block-site-logo .csu-signature-link {
 	display: block;
-	width: 146px;
-	max-height: 100px;
+	aspect-ratio: 146 / 57;
 	overflow: hidden;
 }
 
-.csu-signature {
-	min-width: 450px;
-	max-width: 450px;
-	height: auto;
-	max-height: 57px;
+.wp-block-site-logo .csu-signature {
+	max-width: none;
 }
 
 .csu-signature-medium,
@@ -29,10 +22,33 @@
 
 
 
+/* Header Only */
+:where(header.wp-block-template-part) .csu-signature-link {
+	margin: 0;
+	margin-left: 22px;
+	padding: 22px 0;
+	max-width: 146px;
+	height: 100px;
+	max-height: 100px;
+	aspect-ratio: initial;
+}
+:where(header.wp-block-template-part) .csu-signature {
+	min-width: 450px;
+	max-width: 450px;
+	height: auto;
+	max-height: 57px;
+}
+
+
+
 
 @media (min-width: 768px) {
-	.csu-signature-link {
-		width: 222px;
+	.wp-block-site-logo .csu-signature-link {
+		aspect-ratio: 222 / 57;
+	}
+	/* Header Only */
+	:where(header.wp-block-template-part) .csu-signature-link {
+		max-width: 222px;
 	}
 	.csu-signature-mobile {
 		display: none;
@@ -45,8 +61,12 @@
 
 
 @media (min-width: 1200px) {
-	.csu-signature-link {
-		width: 450px;
+	.wp-block-site-logo .csu-signature-link {
+		aspect-ratio: 450 / 57;
+	}
+	/* Header Only */
+	:where(header.wp-block-template-part) .csu-signature-link {
+		max-width: 450px;
 	}
 	.csu-signature-medium {
 		display: none;
@@ -54,4 +74,43 @@
 	.csu-signature-large {
 		display: block;
 	}
+}
+
+
+
+/* Block Style: Stacked */
+.wp-block-site-logo.is-style-stacked .csu-signature-link {
+	aspect-ratio: 222 / 57;
+}
+.wp-block-site-logo.is-style-stacked .csu-signature {
+	width: 202.7%;
+}
+.wp-block-site-logo.is-style-stacked .csu-signature-medium {
+	display: block;
+}
+.wp-block-site-logo.is-style-stacked .csu-signature-mobile,
+.wp-block-site-logo.is-style-stacked .csu-signature-large {
+	display: none;
+}
+
+/* Block Style: Acronym */
+.wp-block-site-logo.is-style-acronym .csu-signature-link {
+	aspect-ratio: 146 / 57;
+}
+.wp-block-site-logo.is-style-acronym .csu-signature {
+	width: 309.6%;
+}
+.wp-block-site-logo.is-style-acronym .csu-signature-mobile {
+	display: block;
+}
+.wp-block-site-logo.is-style-acronym .csu-signature-medium,
+.wp-block-site-logo.is-style-acronym .csu-signature-large {
+	display: none;
+}
+
+
+
+/* Class: White Fill */
+.wp-block-site-logo.has-white-fill :is(.csu-signature-mobile, .csu-signature-medium, .csu-signature-large) {
+	fill: var(--cla--color--white);
 }

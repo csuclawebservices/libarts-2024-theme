@@ -162,6 +162,33 @@ class Theme {
 
 
 	/**
+	 * Register block style: core/site-logo
+	 * 
+	 * @since 0.2.0
+	 * 
+	 * @return void
+	 */
+	protected function register_block_style__core__site_logo(): void {
+		$block_name = 'core/site-logo';
+		$styles = array(
+			array(
+				'name'			=> 'stacked',
+				'label'			=> __('Stacked', $this->textdomain)
+			),
+			array(
+				'name'			=> 'acronym',
+				'label'			=> __('Acronym', $this->textdomain)
+			)
+		);
+
+		foreach ($styles as $style_properties) {
+			register_block_style($block_name, $style_properties);
+		}
+	}
+
+
+
+	/**
 	 * Register block style: core/spacer
 	 * 
 	 * @since 0.1.0
@@ -288,6 +315,7 @@ class Theme {
 
 	protected function register_block_styles() {
 		$this->register_block_style__core__button();
+		$this->register_block_style__core__site_logo();
 		$this->register_block_style__core__spacer();
 		$this->register_block_style_colors();
 		$this->register_block_style_halftone();
