@@ -53,6 +53,12 @@ class Theme {
 	protected function enqueue_block_styles(): void {
 		$prefix = $this->textdomain . '-block-styles-';
 
+		wp_enqueue_block_style('cla-blocks/accordion-item', array(
+			'handle'	=> $prefix . '-cla-blocks-accordion-item',
+			'src'		=> get_theme_file_uri('assets/css/blocks/cla-blocks-accordion-item.css'),
+			'path'		=> get_theme_file_path('assets/css/blocks/cla-blocks-accordion-item.css')
+		));
+
 		wp_enqueue_block_style('cla-blocks/call-to-action', array(
 			'handle'	=> $prefix . '-cla-blocks-call-to-action',
 			'src'		=> get_theme_file_uri('assets/css/blocks/cla-blocks-call-to-action.css'),
@@ -331,22 +337,28 @@ class Theme {
 
 
 	protected function set_hooks() {
-		add_filter('get_custom_logo', array($this, 'wp_hook_get_custom_logo'));
+		add_filter('block_type_metadata_settings', array($this, 'wp_hook_block_type_metadata_settings'), 10, 2);
 		add_action('init', array($this, 'wp_hook_init'));
 	}
 
 
 
-	public function wp_hook_get_custom_logo($html): string {
-		$custom_logo_id = get_theme_mod('custom_logo');
-
-		if (empty($custom_logo_id)) {
-			$custom_logo_element = '<img src="' . get_stylesheet_directory_uri() . '/assets/images/logo.png" alt="Kaylor of Colorado" />';
-
-			$html = sprintf('<a href="%1$s" class="custom-logo-link" rel="home" itemprop="url">%2$s</a>', esc_url(home_url('/')), $custom_logo_element);
+	/**
+	 * Filter block metadata settings
+	 * 
+	 * @since 0.3.0
+	 * 
+	 * @param array	$settings
+	 * @param array $metadata
+	 * @return array
+	 */
+	public function wp_hook_block_type_metadata_settings($settings, $metadata) {
+		// core/spacer - set default height
+		if ($settings['name'] === 'core/spacer') {
+			$settings['attributes']['height']['default'] = 'var:preset|spacing|4';
 		}
 
-		return $html;
+		return $settings;
 	}
 
 

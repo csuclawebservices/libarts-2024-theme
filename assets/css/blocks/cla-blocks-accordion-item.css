@@ -1,0 +1,24 @@
+.cla-blocks-accordion-item-container {
+	border-top: var(--cla--linework--width) var(--cla--linework--style--solid) var(--cla--color--secondary);
+}
+.cla-blocks-accordion-item-container:last-of-type {
+	border-bottom: var(--cla--linework--width) var(--cla--linework--style--solid) var(--cla--color--secondary);
+}
+.cla-blocks-accordion-item__button {
+	position: relative;
+	transition: transform 300ms;
+}
+.cla-blocks-accordion-item__button:focus,
+.cla-blocks-accordion-item__button:hover {
+	transform: translateX(var(--cla--spacing--1-2));
+}
+
+.cla-blocks-accordion-item .cla-blocks-accordion-item__button-heading {
+	margin: var(--cla--spacing--1) 0;
+	font-size: var(--cla--font-size--200);
+	font-weight: 400;
+}
+.cla-blocks-accordion-item .cla-blocks-accordion-item__button-status {
+	font-size: var(--cla--font-size--200);
+	font-weight: 200;
+}
