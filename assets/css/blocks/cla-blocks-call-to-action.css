@@ -19,9 +19,11 @@
 	grid-area: media;
 	background-color: var(--cla--color--white);
 }
-.cla-blocks-call-to-action-container.has-link:hover .cla-blocks-call-to-action__media {
-	filter: var(--wp--preset--duotone--duotone);
-	mix-blend-mode: hard-light;
+.cla-blocks-call-to-action-container.has-link:hover {
+	filter: brightness(115%);
+}
+.cla-blocks-call-to-action-container.has-link:hover :is(.wp-block-buttons, .wp-block-button) {
+	filter: brightness(92.5%);
 }
 .cla-blocks-call-to-action-container.has-link:hover .cla-blocks-call-to-action::before {
 	grid-area: media;
@@ -84,6 +86,7 @@
 	width: var(--cla--font-size--100);
 	height: var(--cla--font-size--100);
 	text-wrap: nowrap;
+	background: none;
 	overflow: hidden;
 }
 .cla-blocks-call-to-action__link .wp-block-button__link::after {
