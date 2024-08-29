@@ -16,13 +16,16 @@ The theme for all College of Liberal Arts websites.
 
 == Changelog ==
 
-= 0.2.0 - 2024-08-26 =
+= 0.3.0 - 2024-08-27 =
+* Added: A filter to set default block setting values (for attributes), specifically for the core/spacer block.
+* Updated: cla-blocks/call-to-action CSS to improve button/arrow appearance and overall interactive state appearance
+* Updated: The footer.php pattern so that some columns stacked on mobile and some didn't
 
+= 0.2.0 - 2024-08-26 =
 * Added: A footer pattern file to be used as the default for all sites.
 * Updated: The core/site-logo to add new Block Styles so the SVG can be forced to display as the "Stacked" or "Acronym" layout.
 
 = 0.1.0 - 2024-08-23 =
-
 * Initial release
 
 
