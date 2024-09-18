@@ -1,0 +1,8 @@
+.cla-editor-box-class-name-select-control {
+	display: flex;
+	flex-direction: row;
+	gap: 2px;
+}
+.cla-editor-box-class-name-select-control > .cla-editor-class-name-select-control {
+	flex-basis: 25%;
+}
