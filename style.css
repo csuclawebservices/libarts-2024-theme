@@ -202,6 +202,9 @@ body,
 	--cla--viewport--offset--left: 0px;
 	--cla--viewport--height: calc(100vh - (var(--cla--viewport--offset--top) - var(--cla--viewport--offset--bottom)));
 	--cla--viewport--width: calc(100vw - (var(--cla--viewport--offset--left) - var(--cla--viewport--offset--right)));
+
+	/* Layers/z-index */
+	--cla--layer--linework: 100;
 }
 
 body.admin-bar {
@@ -305,6 +308,12 @@ header.wp-block-template-part {
 /* --------------------------------
  * Block Styles
  * -------------------------------- */
+
+/* Style: energy-green */
+.is-style-energy-green {
+	--cla--color--secondary: var(--cla--color--energy-green);
+	--cla--color--secondary--contrast: var(--cla--color--csu-green);
+}
 
 /* Style: horsetooth-blue */
 .is-style-horsetooth-blue {

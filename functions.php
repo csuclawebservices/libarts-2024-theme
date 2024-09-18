@@ -244,13 +244,13 @@ class Theme {
 			'cla-blocks/image-group-item',
 			'cla-blocks/sequence',
 			'cla-blocks/sequence-item',
-			'cla/header'
+			'cla/header',
+			'core/group'
 		);
 		$styles = array(
 			array(
-				'is_default'	=> true,
-				'name'			=> 'default',
-				'label'			=> __('Default', $this->textdomain)
+				'name'			=> 'energy-green',
+				'label'			=> 'Energy Green'
 			),
 			array(
 				'name'			=> 'horsetooth-blue',
