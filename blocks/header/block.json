@@ -5,7 +5,7 @@
   "version": "0.0.1",
   "title": "Header",
   "category": "theme",
-  "icon": "layout",
+  "icon": "layout1",
   "description": "A page or post header",
   "supports": {
     "align": [
@@ -39,18 +39,17 @@
     }
   },
   "textdomain": "cla",
-  "editorScript": "file:./block.js",
-  "viewScriptModule": "",
-  "style": "file:./block.css",
-  "editorStyle": "flie:./editor.css",
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css",
   "allowedBlocks": [
     "core/image",
     "core/video"
   ],
   "attributes": {
     "layout": {
-      "type": "string",
-      "default": "primary"
+      "type": "number",
+      "default": 1
     },
     "title": {
       "type": "string",
