@@ -1,0 +1,19 @@
+/* Responsive: Padding */
+.is-responsive-padding-top-small {padding-top: var(--cla--spacing--decoration-small);}
+.is-responsive-padding-right-small {padding-right: var(--cla--spacing--decoration-small);}
+.is-responsive-padding-bottom-small {padding-bottom: var(--cla--spacing--decoration-small);}
+.is-responsive-padding-left-small {padding-left: var(--cla--spacing--decoration-small);}
+.is-responsive-padding-top-large {padding-top: var(--cla--spacing--decoration);}
+.is-responsive-padding-right-large {padding-right: var(--cla--spacing--decoration);}
+.is-responsive-padding-bottom-large {padding-bottom: var(--cla--spacing--decoration);}
+.is-responsive-padding-left-large {padding-left: var(--cla--spacing--decoration);}
+
+/* Responsive: Margin */
+:root :is([class*="wp-block-"]).is-responsive-margin-top-small {margin-top: var(--cla--spacing--decoration-small);}
+:root :is([class*="wp-block-"]).is-responsive-margin-right-small {margin-right: var(--cla--spacing--decoration-small);}
+:root :is([class*="wp-block-"]).is-responsive-margin-bottom-small {margin-bottom: var(--cla--spacing--decoration-small);}
+:root :is([class*="wp-block-"]).is-responsive-margin-left-small {margin-left: var(--cla--spacing--decoration-small);}
+:root :is([class*="wp-block-"]).is-responsive-margin-top-large {margin-top: var(--cla--spacing--decoration);}
+:root :is([class*="wp-block-"]).is-responsive-margin-right-large {margin-right: var(--cla--spacing--decoration);}
+:root :is([class*="wp-block-"]).is-responsive-margin-bottom-large {margin-bottom: var(--cla--spacing--decoration);}
+:root :is([class*="wp-block-"]).is-responsive-margin-left-large {margin-left: var(--cla--spacing--decoration);}
