@@ -27,7 +27,7 @@ $RECYCLE.BIN/
 
 #NPM
 node_modules
-blocks
+/blocks/
 
 #Composer
 vendor
