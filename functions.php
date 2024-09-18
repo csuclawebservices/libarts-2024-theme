@@ -13,6 +13,15 @@ class Theme {
 	protected static $instance = null;
 
 	/**
+	 * Parent Theme
+	 * 
+	 * @since 0.3.0
+	 * @access protected
+	 * @var Theme $parent_theme
+	 */
+	protected ?\infinitum\inc\Theme $parent_theme = null;
+
+	/**
 	 * Text Domain
 	 * 
 	 * @since 0.1.0
@@ -28,9 +37,9 @@ class Theme {
 
 
 
-	public static function get_instance() {
+	public static function get_instance($parent_theme = null) {
 		if (is_null(static::$instance)) {
-			static::$instance = new static();
+			static::$instance = new static($parent_theme);
 		}
 
 		return static::$instance;
@@ -122,6 +131,28 @@ class Theme {
 			'src'		=> get_theme_file_uri('assets/css/blocks/infinitum-breadcrumbs.css'),
 			'path'		=> get_theme_file_path('assets/css/blocks/infinitum-breadcrumbs.css')
 		));
+	}
+
+
+
+	/**
+	 * Maybe set the page template. This only happens if it's a page and when the page is being first created
+	 * 	and not being updated.
+	 * 
+	 * @since 0.4.0
+	 * 
+	 * @see wp_hook_wp_insert_post
+	 * 
+	 * @param int		$post_id
+	 * @param WP_Post	$post
+	 * @param bool		$update
+	 * @return void
+	 */
+	protected function maybe_set_page_template($post_id, $post, $update): void {
+		// If the post type is 'page' and the current $update action is NOT update (meaning only new pages)
+		if ($post->post_type === 'page' && !$update) {
+			$this->parent_theme->set_page_template($post_id, 'blank', array(''));
+		}
 	}
 
 
@@ -341,8 +372,30 @@ class Theme {
 
 
 	protected function set_hooks() {
+		add_action('after_setup_theme', array($this, 'wp_hook_after_setup_theme'), 1);
 		add_filter('block_type_metadata_settings', array($this, 'wp_hook_block_type_metadata_settings'), 10, 2);
+		add_action('enqueue_block_assets', array($this, 'wp_hook_enqueue_block_assets'), 10);
 		add_action('init', array($this, 'wp_hook_init'));
+		add_action('wp_insert_post', array($this, 'wp_hook_wp_insert_post'), 10, 3);
+	}
+
+
+
+	public function wp_hook_enqueue_block_assets(): void {
+		$this->enqueue_block_assets();
+	}
+
+
+
+	/**
+	 * WP Hook: after_setup_theme
+	 * 
+	 * @since 0.4.0
+	 * @return void
+	 */
+	public function wp_hook_after_setup_theme(): void {
+		// Set the parent_theme property immediately after the child theme and parent themes are loaded
+		$this->parent_theme = \infinitum\inc\Theme::get_instance();
 	}
 
 
@@ -367,12 +420,30 @@ class Theme {
 
 
 
-	public function wp_hook_init() {
+	public function wp_hook_init(): void {
 		$this->register_block_pattern_categories();
 		$this->register_block_types();
 		$this->register_block_styles();
 		$this->enqueue_block_styles();
 		$this->enqueue_block_editor_assets();
+	}
+
+
+
+	/**
+	 * WP Hook: wp_insert_post
+	 * 
+	 * @since 0.4.0
+	 * 
+	 * @see wp_hook_wp_insert_post
+	 * 
+	 * @param int		$post_id
+	 * @param WP_Post	$post
+	 * @param bool		$update
+	 * @return void
+	 */
+	public function wp_hook_wp_insert_post($post_id, $post, $update): void {
+		$this->maybe_set_page_template($post_id, $post, $update);
 	}
 }
 Theme::get_instance();
