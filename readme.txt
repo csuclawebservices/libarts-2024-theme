@@ -16,6 +16,15 @@ The theme for all College of Liberal Arts websites.
 
 == Changelog ==
 
+= 0.4.0 - 2024-08-30 =
+* Added: A "Sub Heading" block variation of the "Heading" block that has the "Bodoni" font family by default and font size of "200"
+* Added: core/group "Decoration" dropdown to the Block Controls toolbar to allow adding a decoration (such as "Linework Enclosed") while still being able to use block styles for themed colors.
+* Added: core/group "Responsive" tools panel to the Inspector Controls styles to allow adding responsive padding and margin values that automatically adjust at different breakpoint sizes
+* Added: src/editor which is used to generate the assets/js/editor.js file which combines all non-block editor scripts into one. Includes scripts such as block variations, unregistering core block styles, the new "Decorations" drop down menu for the core/group block, the new "Responsive" Inspector Controls Tools Panel that adds responsive padding and margin options to the core/group block, and a new utils.js script.
+* Updated: The cla/header block file naming to match that of the official block structure documentation
+* Updated: Added some Theme methods to set the default page template to be "blank" instead of the default that includes the featured image, page title, and breadcrumbs
+* Updated: core/paragraph CSS to allow for <p> tags and <span> tags since the new cla-blocks/heading-group converts all tags within it to <span> tags.
+
 = 0.3.0 - 2024-08-27 =
 * Added: A filter to set default block setting values (for attributes), specifically for the core/spacer block.
 * Updated: cla-blocks/call-to-action CSS to improve button/arrow appearance and overall interactive state appearance
@@ -33,5 +42,4 @@ The theme for all College of Liberal Arts websites.
 == Upgrade Notice ==
 
 = 0.1.0 =
-
 * Initial release
