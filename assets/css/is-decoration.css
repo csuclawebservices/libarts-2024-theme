@@ -1,0 +1,76 @@
+/* Decoration: Linework Enclosed */
+.wp-block-group.is-decoration-linework-enclosed,
+.editor-styles-wrapper .wp-block-group.is-decoration-linework-enclosed {
+	--is-decoration-linework-enclosed-spacing: calc(var(--cla--spacing--decoration) - var(--cla--point--size));
+	position: relative;
+	padding-top: var(--cla--spacing--decoration);
+	padding-right: var(--cla--spacing--decoration);
+	padding-bottom: var(--cla--spacing--decoration);
+	padding-left: var(--cla--spacing--decoration);
+}
+[class*="-background-color"].wp-block-group.is-decoration-linework-enclosed::before {
+	--cla--color--linework: var(--cla--color--white);
+}
+.wp-block-group.is-decoration-linework-enclosed::before {
+	--is-decoration-linework-enclosed-background-colors:
+		var(--cla--color--linework),
+		var(--cla--color--linework) var(--cla--linework--width),
+		transparent var(--cla--linework--width),
+		transparent 100%;
+	content: "";
+	position: absolute;
+	z-index: var(--cla--layer--linework);
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	pointer-events: none;
+}
+.editor-styles-wrapper .wp-block-group.is-decoration-linework-enclosed::before {
+	z-index: initial;
+}
+.wp-block-group.is-decoration-linework-enclosed::before {
+	top: 0;
+	bottom: 0;
+	background-image:
+		radial-gradient(var(--cla--color--secondary) var(--cla--point--radial-gradient--atts)),
+		radial-gradient(var(--cla--color--secondary) var(--cla--point--radial-gradient--atts)),
+		radial-gradient(var(--cla--color--secondary) var(--cla--point--radial-gradient--atts)),
+		radial-gradient(var(--cla--color--secondary) var(--cla--point--radial-gradient--atts)),
+		linear-gradient(0deg, var(--is-decoration-linework-enclosed-background-colors)),
+		linear-gradient(90deg, var(--is-decoration-linework-enclosed-background-colors)),
+		linear-gradient(180deg, var(--is-decoration-linework-enclosed-background-colors)),
+		linear-gradient(270deg, var(--is-decoration-linework-enclosed-background-colors));
+	background-position:
+		var(--is-decoration-linework-enclosed-spacing) var(--is-decoration-linework-enclosed-spacing),
+		calc(100% - var(--is-decoration-linework-enclosed-spacing)) var(--is-decoration-linework-enclosed-spacing),
+		calc(100% - var(--is-decoration-linework-enclosed-spacing)) calc(100% - var(--is-decoration-linework-enclosed-spacing)),
+		var(--is-decoration-linework-enclosed-spacing) calc(100% - var(--is-decoration-linework-enclosed-spacing)),
+		0 calc(100% - var(--cla--spacing--decoration)),
+		var(--cla--spacing--decoration) 0,
+		0 var(--cla--spacing--decoration),
+		calc(100% - var(--cla--spacing--decoration)) 0;
+	background-size:
+		calc(var(--cla--point--size) * 2) calc(var(--cla--point--size) * 2),
+		calc(var(--cla--point--size) * 2) calc(var(--cla--point--size) * 2),
+		calc(var(--cla--point--size) * 2) calc(var(--cla--point--size) * 2),
+		calc(var(--cla--point--size) * 2) calc(var(--cla--point--size) * 2),
+		100% 100%,
+		100% 100%,
+		100% 100%,
+		100% 100%;
+	background-repeat:
+		no-repeat,
+		no-repeat,
+		no-repeat,
+		no-repeat,
+		no-repeat,
+		no-repeat,
+		no-repeat,
+		no-repeat;
+}
+.wp-block-group.is-decoration-linework-enclosed > .wp-block-group.alignfull,
+.editor-styles-wrapper .wp-block-group.is-decoration-linework-enclosed > .wp-block-group.alignfull {
+	margin-left: 0;
+	margin-right: 0;
+}
