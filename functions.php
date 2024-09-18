@@ -38,14 +38,18 @@ class Theme {
 
 
 
+	protected function enqueue_block_assets(): void {
+		wp_enqueue_style('cla-is-decoration', get_theme_file_uri('assets/css/is-decoration.css'));
+		wp_enqueue_style('cla-is-responsive', get_theme_file_uri('assets/css/is-responsive.css'));
+	}
+
+
+
 	protected function enqueue_block_editor_assets(): void {
-		wp_enqueue_script(
-			'cla-theme-editor-js',
-			get_stylesheet_directory_uri() . '/assets/js/editor.js',
-			array('wp-blocks', 'wp-dom-ready', 'wp-edit-post'),
-			filemtime(get_stylesheet_directory() . '/assets/js/editor.js'),
-			true
-		);
+		$editor_asset = include get_stylesheet_directory() . '/assets/js/editor.asset.php';
+
+		wp_enqueue_script('cla-theme-editor-js', get_stylesheet_directory_uri() . '/assets/js/editor.js', $editor_asset['dependencies'], $editor_asset['version'], true);
+		wp_enqueue_style('cla-theme-editor-css', get_stylesheet_directory_uri() . '/assets/js/index.css', array(), $editor_asset['version']);
 	}
 
 
