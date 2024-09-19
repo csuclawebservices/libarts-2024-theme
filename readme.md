@@ -7,4 +7,4 @@ Note that this is still in early development and breaking changes are likely wit
 This project is licensed under the GPL 3.0 or later
 
 ## Copyright
-© 2024 John Russell, Colorado State University. All rights reserved.
+© 2024 Colorado State University. All rights reserved.
