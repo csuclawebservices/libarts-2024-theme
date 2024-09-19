@@ -3,6 +3,8 @@ The block theme for all College of Liberal Arts websites that implements the ["F
 
 Note that this is still in early development and breaking changes are likely with future releases.
 
+This theme is built as a child theme of the [Infinitum theme](https://github.com/laubsterboy/infinitum). Infinitum theme must be installed for this theme to be activated.
+
 ## License
 This project is licensed under the GPL 3.0 or later
 
