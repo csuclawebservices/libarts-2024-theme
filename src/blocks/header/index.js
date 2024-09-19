@@ -3,7 +3,7 @@ import { layout1 } from '@csuclawebservices/icons';
 
 import './style.css';
 
-import Edit from './edit';
+import edit from './edit';
 import save from './save';
 import metadata from './block.json';
 import variations from './variations';
@@ -19,7 +19,7 @@ registerBlockType( metadata.name, {
 	/**
 	 * @see ./edit.js
 	 */
-	edit: Edit,
+	edit,
 
 	/**
 	 * @see ./save.js
