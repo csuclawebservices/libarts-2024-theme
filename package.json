@@ -1,6 +1,13 @@
 {
 	"name": "libarts-2024-theme",
 	"version": "0.1.0",
+	"description": "The block theme for all College of Liberal Arts websites",
+	"author": "csuclawebservices",
+	"keywords": [
+		"WordPress",
+		"theme"
+	],
+	"license": "GPL-2.0-or-later",
 	"scripts": {
 		"build:editor": "wp-scripts build --webpack-src-dir=src/editor --output-path assets/js --output-filename editor.js",
 		"build": "wp-scripts build --webpack-src-dir=src/blocks --output-path=blocks",
