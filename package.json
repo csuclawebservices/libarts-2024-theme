@@ -15,7 +15,7 @@
 		"start": "wp-scripts start --webpack-src-dir=src/blocks --output-path=blocks"
 	},
 	"devDependencies": {
-		"@csuclawebservices/icons": "^1.6.0",
+		"@csuclawebservices/icons": "^1.8.0",
 		"@wordpress/icons": "^10.2.0",
 		"@wordpress/scripts": "^28.2.0"
 	}
