@@ -2,7 +2,7 @@
 Contributors: CLA Web Services
 Requires at least: 6.6
 Requires PHP: 8.1
-Stable tag: 0.1.0
+Stable tag: 0.5.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -15,6 +15,13 @@ The theme for all College of Liberal Arts websites.
 
 
 == Changelog ==
+
+= 0.5.0 - 2024-10-01 =
+* Added: Removed unwanted block pattern categories (footer, header, infinitum, posts) to keep the block pattenrs as organized as possible.
+* Updated: @csuclawebservices/icons to 1.8.0.
+* Updated: Decorations to add a new "Brushstroke Enclosed", "Brushstroke Background", "Brushstroke Background (white)" decoration options.
+* Updated: Block category from 'theme' to 'cla' (labeled as "College of Liberal Arts") which are placed at the top of the list in the CLA Blocks plugin version 0.4.0
+* Fixed: All instances of the Bodoni Moda (serif) font-family now have a font-variation-settings: 'opsz' 10 so it displays properly on 
 
 = 0.4.0 - 2024-08-30 =
 * Added: A "Sub Heading" block variation of the "Heading" block that has the "Bodoni" font family by default and font size of "200"
