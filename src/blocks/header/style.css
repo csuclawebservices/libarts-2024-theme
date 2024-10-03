@@ -1,3 +1,13 @@
+/* Block Preview */
+.block-editor-block-preview__content-iframe .cla-header-container {
+	--cla--viewport--height: 800px;
+}
+.block-editor-block-preview__content-iframe .cla-header__media .wp-block-image > div {
+	height: 100%;
+}
+
+
+
 .cla-header-container {
 	--cla--color--linework: var(--cla--color--black);
 	container-name: cla-header-container;
@@ -276,7 +286,6 @@
 		justify-content: flex-end;
 		color: var(--cla--color--secondary--contrast);
 		background-color: var(--cla--color--secondary);
-		
 	}
 	.cla-header-container.is-cla-layout-1 .cla-header__breadcrumbs > .wp-block-infinitum-breadcrumbs {
 		padding-block: var(--cla--spacing--1) var(--cla--spacing--1);

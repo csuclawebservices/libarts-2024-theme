@@ -4,9 +4,17 @@
 	"name": "cla/header",
 	"version": "0.0.1",
 	"title": "Header",
-	"category": "theme",
+	"category": "cla",
 	"icon": "layout1",
 	"description": "A page or post header",
+	"example": {
+		"attributes": {
+			"title": "Title",
+			"subtitle": "Subtitle",
+			"description": "Aliquam in quam nec ligula finibus rutrum non ut dui. Curabitur et risus et magna vulputate pellentesque non sed odio. Ut ornare nisi sapien, a cursus est tristique condimentum. Vivamus fringilla finibus semper."
+		},
+		"viewportWidth": 1440
+	},
 	"supports": {
 		"align": ["wide", "full"],
 		"color": {

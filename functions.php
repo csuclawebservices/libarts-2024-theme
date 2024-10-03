@@ -415,6 +415,18 @@ class Theme {
 			$settings['attributes']['height']['default'] = 'var:preset|spacing|4';
 		}
 
+		// cla/header
+		if ($settings['name'] === 'cla/header') {
+			$settings['example']['innerBlocks'] = array(
+				array(
+					'name' => 'core/image',
+					'attributes' => array(
+						'url' => get_stylesheet_directory_uri() . '/assets/images/placeholder-image.jpg'
+					)
+				)
+			);
+		}
+
 		return $settings;
 	}
 
