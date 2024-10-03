@@ -283,7 +283,7 @@
 							"fontFamily": "Bodoni Moda",
 							"fontStretch": "normal",
 							"fontStyle": "normal",
-							"fontVariationSettings": "\"opsz\" 10",
+							"fontVariationSettings": "'opsz' 10",
 							"fontWeight": "400 900",
 							"src": [
 								"file:./assets/fonts/bodoni-moda/BodoniModa-VariableFont_opsz,wght.ttf"
@@ -293,7 +293,7 @@
 							"fontFamily": "Bodoni Moda",
 							"fontStretch": "normal",
 							"fontStyle": "italic",
-							"fontVariationSettings": "\"opsz\" 10",
+							"fontVariationSettings": "'opsz' 10",
 							"fontWeight": "400 900",
 							"src": [
 								"file:./assets/fonts/bodoni-moda/BodoniModa-Italic-VariableFont_opsz,wght.ttf"

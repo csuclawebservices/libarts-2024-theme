@@ -10,6 +10,7 @@
 	font-family: var(--cla--font-family--serif);
 	font-size: 1.1em;
 	font-weight: 400;
+	font-variation-settings: "opsz" 10;
 }
 
 /* Style: emphasis-headline-small, emphasis-headline-large */
@@ -27,13 +28,13 @@
 :is(p, span).is-style-emphasis-headline-small > em {
 	font-family: var(--cla--font-family--serif);
 	font-weight: 500;
+	font-variation-settings: "opsz" 10;
 }
 :is(p, span).is-style-emphasis-headline-small {
 	font-size: var(--cla--font-size--200);
 	letter-spacing: 5px;
 }
 :is(p, span).is-style-emphasis-headline-small > em {
-	font-family: var(--cla--font-family--serif);
 	text-transform: capitalize;
 }
 :is(p, span).is-style-emphasis-headline-large,
@@ -43,7 +44,6 @@
 	line-height: 0.75;
 }
 :is(p, span).is-style-emphasis-headline-large > em {
-	font-family: var(--cla--font-family--serif);
 	font-weight: 400;
 }
 

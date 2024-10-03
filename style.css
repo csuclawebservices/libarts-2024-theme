@@ -120,7 +120,6 @@ body,
 	/* Font Family */
 	--cla--font-family--serif: var(--wp--preset--font-family--serif-1);
 	--cla--font-family--sans: var(--wp--preset--font-family--sans-serif-1);
-
 	--cla--font-family--subtitle: var(--cla--font-family--serif);
 
 	/* Font Size */
@@ -205,6 +204,7 @@ body,
 
 	/* Layers/z-index */
 	--cla--layer--linework: 100;
+	--cla--layer--brushstroke: 90;
 }
 
 body.admin-bar {
@@ -300,6 +300,15 @@ header.wp-block-template-part {
 .is-style-halftone::after {
     transform: rotate(calc(-21deg + var(--halftone-rotation))) translateX(calc(var(--halftone-size) * 0.58));
     background-image: radial-gradient(var(--halftone-color-dot-size) at 75% 25%, #f0f, #f6f, #fff), radial-gradient( var(--halftone-color-dot-size) at 25% 75%, #f0f, #f6f, #fff), radial-gradient(var(--halftone-color-dot-size) at 75% 75%, #0ff, #6ff, #fff), radial-gradient(var(--halftone-color-dot-size) at 25% 25%, #0ff, #6ff, #fff);
+}
+
+
+
+/* --------------------------------
+ * Fonts
+ * -------------------------------- */
+.has-serif-1-font-family {
+	font-variation-settings: 'opsz' 10;
 }
 
 

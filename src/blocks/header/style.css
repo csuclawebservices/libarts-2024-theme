@@ -76,6 +76,7 @@
 	font-family: var(--cla--font-family--subtitle);
 	font-size: var(--cla--font-size--subtitle);
 	font-weight: var(--cla--font-weight--subtitle);
+	font-variation-settings: 'opsz' 10;
 	line-height: var(--cla--line-height);
 	color: var(--cla--color--secondary--contrast);
 	background-color: var(--cla--color--secondary);
