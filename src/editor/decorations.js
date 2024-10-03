@@ -27,6 +27,18 @@ const appendBlockEdits = (BlockEdit) => (props) => {
 											value: 'none'
 										},
 										{
+											label: 'Brushstroke Background',
+											value: 'brushstroke-background'
+										},
+										{
+											label: 'Brushstroke Background (white)',
+											value: 'brushstroke-background--white'
+										},
+										{
+											label: 'Brushstroke Enclosed',
+											value: 'brushstroke-enclosed'
+										},
+										{
 											label: 'Linework Enclosed',
 											value: 'linework-enclosed'
 										}

@@ -1,22 +1,20 @@
-/* Decoration: Linework Enclosed */
-.wp-block-group.is-decoration-linework-enclosed,
-.editor-styles-wrapper .wp-block-group.is-decoration-linework-enclosed {
+/* Decoration: All */
+.wp-block-group[class*="is-decoration-"]:not(.is-decoration-none),
+.editor-styles-wrapper .wp-block-group[class*="is-decoration-"]:not(.is-decoration-none) {
 	--is-decoration-linework-enclosed-spacing: calc(var(--cla--spacing--decoration) - var(--cla--point--size));
 	position: relative;
-	padding-top: var(--cla--spacing--decoration);
-	padding-right: var(--cla--spacing--decoration);
-	padding-bottom: var(--cla--spacing--decoration);
-	padding-left: var(--cla--spacing--decoration);
 }
-[class*="-background-color"].wp-block-group.is-decoration-linework-enclosed::before {
+[class*="-background-color"].wp-block-group[class*="is-decoration-"]:not(.is-decoration-none)::before {
 	--cla--color--linework: var(--cla--color--white);
 }
-.wp-block-group.is-decoration-linework-enclosed::before {
-	--is-decoration-linework-enclosed-background-colors:
+.wp-block-group[class*="is-decoration-"]:not(.is-decoration-none)::before {
+	--is-decoration-linework-gradient-colors:
 		var(--cla--color--linework),
 		var(--cla--color--linework) var(--cla--linework--width),
 		transparent var(--cla--linework--width),
 		transparent 100%;
+}
+.wp-block-group[class*="is-decoration-"]:not(.is-decoration-none)::before {
 	content: "";
 	position: absolute;
 	z-index: var(--cla--layer--linework);
@@ -26,21 +24,104 @@
 	left: 0;
 	pointer-events: none;
 }
-.editor-styles-wrapper .wp-block-group.is-decoration-linework-enclosed::before {
+.editor-styles-wrapper .wp-block-group[class*="is-decoration-"]:not(.is-decoration-none)::before {
 	z-index: initial;
 }
-.wp-block-group.is-decoration-linework-enclosed::before {
+.wp-block-group[class*="is-decoration-"]:not(.is-decoration-none) > .wp-block-group.alignfull,
+.editor-styles-wrapper .wp-block-group[class*="is-decoration-"]:not(.is-decoration-none) > .wp-block-group.alignfull {
+	margin-left: 0;
+	margin-right: 0;
+}
+
+
+
+/* Decoration: Brushstroke Background */
+.wp-block-group.is-decoration-brushstroke-background::before,
+.wp-block-group.is-decoration-brushstroke-background--white::before {
+	z-index: var(--cla--layer--brushstroke);
+	background-image: url('../images/brushstroke-texture.png');
+	background-position: center center;
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+/* Decoration: Brushstroke Background (white) */
+.wp-block-group.is-decoration-brushstroke-background--white::before {
+	mix-blend-mode: overlay;
+	background-image: url('../images/brushstroke-texture--20-percent--white.svg');
+}
+
+
+
+/* Decoration: Brushstroke Enclosed */
+.wp-block-group.is-decoration-brushstroke-enclosed,
+.editor-styles-wrapper .wp-block-group.is-decoration-brushstroke-enclosed {
+	padding: 0 0 var(--cla--spacing--decoration) var(--cla--spacing--decoration);
+}
+.wp-block-group.is-decoration-brushstroke-enclosed::before {
+	background-image:
+		radial-gradient(var(--cla--color--secondary) var(--cla--point--radial-gradient--atts)),
+		linear-gradient(0deg, var(--is-decoration-linework-gradient-colors)),
+		linear-gradient(90deg, var(--is-decoration-linework-gradient-colors)),
+		linear-gradient(0deg, var(--cla--color--primary) 0%, var(--cla--color--primary) 100%);
+	background-position:
+		var(--is-decoration-linework-enclosed-spacing) calc(100% - var(--is-decoration-linework-enclosed-spacing)),
+		0 calc(100% - var(--cla--spacing--decoration)),
+		var(--cla--spacing--decoration) 0,
+		var(--cla--spacing--decoration) 100%;
+	background-size:
+		calc(var(--cla--point--size) * 2) calc(var(--cla--point--size) * 2),
+		100% 100%,
+		100% 100%,
+		calc(100% - var(--cla--spacing--decoration)) var(--cla--spacing--decoration);
+	background-repeat:
+		no-repeat,
+		no-repeat,
+		no-repeat,
+		no-repeat;
+}
+.wp-block-group.is-decoration-brushstroke-enclosed::after {
+	content: "";
+	position: absolute;
+	z-index: var(--cla--layer--brushstroke);
 	top: 0;
+	left: 0;
 	bottom: 0;
+	width: var(--cla--spacing--decoration);
+	background-image:
+		url('../images/brushstroke-texture.png'),
+		linear-gradient(0deg, var(--cla--color--secondary) 0%, var(--cla--color--secondary) 100%);
+	background-position:
+		60% 65%,
+		100% 100%;
+	background-size:
+		750%,
+		100%;
+	background-repeat:
+		no-repeat,
+		no-repeat;
+	pointer-events: none;
+}
+.wp-block-group.is-decoration-brushstroke-enclosed > .wp-block-group.is-layout-constrained {
+	padding-right: calc(var(--wp--style--root--padding-right) + var(--cla--spacing--decoration));
+}
+
+
+
+/* Decoration: Linework Enclosed */
+.wp-block-group.is-decoration-linework-enclosed,
+.editor-styles-wrapper .wp-block-group.is-decoration-linework-enclosed {
+	padding: var(--cla--spacing--decoration);
+}
+.wp-block-group.is-decoration-linework-enclosed::before {
 	background-image:
 		radial-gradient(var(--cla--color--secondary) var(--cla--point--radial-gradient--atts)),
 		radial-gradient(var(--cla--color--secondary) var(--cla--point--radial-gradient--atts)),
 		radial-gradient(var(--cla--color--secondary) var(--cla--point--radial-gradient--atts)),
 		radial-gradient(var(--cla--color--secondary) var(--cla--point--radial-gradient--atts)),
-		linear-gradient(0deg, var(--is-decoration-linework-enclosed-background-colors)),
-		linear-gradient(90deg, var(--is-decoration-linework-enclosed-background-colors)),
-		linear-gradient(180deg, var(--is-decoration-linework-enclosed-background-colors)),
-		linear-gradient(270deg, var(--is-decoration-linework-enclosed-background-colors));
+		linear-gradient(0deg, var(--is-decoration-linework-gradient-colors)),
+		linear-gradient(90deg, var(--is-decoration-linework-gradient-colors)),
+		linear-gradient(180deg, var(--is-decoration-linework-gradient-colors)),
+		linear-gradient(270deg, var(--is-decoration-linework-gradient-colors));
 	background-position:
 		var(--is-decoration-linework-enclosed-spacing) var(--is-decoration-linework-enclosed-spacing),
 		calc(100% - var(--is-decoration-linework-enclosed-spacing)) var(--is-decoration-linework-enclosed-spacing),
@@ -68,9 +149,4 @@
 		no-repeat,
 		no-repeat,
 		no-repeat;
-}
-.wp-block-group.is-decoration-linework-enclosed > .wp-block-group.alignfull,
-.editor-styles-wrapper .wp-block-group.is-decoration-linework-enclosed > .wp-block-group.alignfull {
-	margin-left: 0;
-	margin-right: 0;
 }
