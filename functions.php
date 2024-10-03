@@ -195,8 +195,6 @@ class Theme {
 		register_block_pattern_category('typography', array(
 			'label' => __('Typography', $this->textdomain)
 		));
-
-		//unregister_block_pattern_category('infinitum');
 	}
 
 
@@ -403,7 +401,26 @@ class Theme {
 		add_filter('block_type_metadata_settings', array($this, 'wp_hook_block_type_metadata_settings'), 10, 2);
 		add_action('enqueue_block_assets', array($this, 'wp_hook_enqueue_block_assets'), 10);
 		add_action('init', array($this, 'wp_hook_init'));
+		add_action('init', array($this, 'wp_hook_init_late'), 20);
 		add_action('wp_insert_post', array($this, 'wp_hook_wp_insert_post'), 10, 3);
+	}
+
+
+
+	/**
+	 * Unregister block pattern categories
+	 * 
+	 * @since 0.5.0
+	 * 
+	 * @access protected
+	 * 
+	 * @return void
+	 */
+	protected function unregister_block_pattern_categories(): void {
+		unregister_block_pattern_category('footer');
+		unregister_block_pattern_category('header');
+		unregister_block_pattern_category('infinitum');
+		unregister_block_pattern_category('posts');
 	}
 
 
@@ -474,6 +491,21 @@ class Theme {
 		$this->register_block_styles();
 		$this->enqueue_block_styles();
 		$this->enqueue_block_editor_assets();
+	}
+
+
+
+	/**
+	 * WP Hook: init (high number/late priority)
+	 * 
+	 * @since 0.5.0
+	 * 
+	 * @access public
+	 * 
+	 * @return void
+	 */
+	public function wp_hook_init_late(): void {
+		$this->unregister_block_pattern_categories();
 	}
 
 
