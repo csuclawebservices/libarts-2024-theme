@@ -13,11 +13,11 @@ class Theme {
 	protected static $instance = null;
 
 	/**
-	 * Parent Theme
+	 * Parent Theme (null until after the after_setup_theme action hook is fired)
 	 * 
 	 * @since 0.3.0
 	 * @access protected
-	 * @var Theme $parent_theme
+	 * @var \infinitum\inc\Theme $parent_theme
 	 */
 	protected ?\infinitum\inc\Theme $parent_theme = null;
 
@@ -37,6 +37,15 @@ class Theme {
 
 
 
+	/**
+	 * Get an instance of the Theme class
+	 * 
+	 * @since 0.1.0
+	 * 
+	 * @access public
+	 * 
+	 * @param \infinitum\inc\Theme
+	 */
 	public static function get_instance($parent_theme = null) {
 		if (is_null(static::$instance)) {
 			static::$instance = new static($parent_theme);
@@ -47,6 +56,15 @@ class Theme {
 
 
 
+	/**
+	 * Enqueue block assets
+	 * 
+	 * @since 0.4.0
+	 * 
+	 * @access protected
+	 * 
+	 * @return void
+	 */
 	protected function enqueue_block_assets(): void {
 		wp_enqueue_style('cla-is-decoration', get_theme_file_uri('assets/css/is-decoration.css'));
 		wp_enqueue_style('cla-is-responsive', get_theme_file_uri('assets/css/is-responsive.css'));
@@ -54,11 +72,20 @@ class Theme {
 
 
 
+	/**
+	 * Enqueue block editor assets
+	 * 
+	 * @since 0.4.0
+	 * 
+	 * @access protected
+	 * 
+	 * @return void
+	 */
 	protected function enqueue_block_editor_assets(): void {
-		$editor_asset = include get_stylesheet_directory() . '/assets/js/editor.asset.php';
+		$editor_assets = include get_stylesheet_directory() . '/assets/js/editor.asset.php';
 
-		wp_enqueue_script('cla-theme-editor-js', get_stylesheet_directory_uri() . '/assets/js/editor.js', $editor_asset['dependencies'], $editor_asset['version'], true);
-		wp_enqueue_style('cla-theme-editor-css', get_stylesheet_directory_uri() . '/assets/js/index.css', array(), $editor_asset['version']);
+		wp_enqueue_script('cla-theme-editor-js', get_stylesheet_directory_uri() . '/assets/js/editor.js', $editor_assets['dependencies'], $editor_assets['version'], true);
+		wp_enqueue_style('cla-theme-editor-css', get_stylesheet_directory_uri() . '/assets/js/index.css', array(), $editor_assets['version']);
 	}
 
 
@@ -432,6 +459,15 @@ class Theme {
 
 
 
+	/**
+	 * WP Hook: init (default priority)
+	 * 
+	 * @since 0.1.0
+	 * 
+	 * @access public
+	 * 
+	 * @return void
+	 */
 	public function wp_hook_init(): void {
 		$this->register_block_pattern_categories();
 		$this->register_block_types();
